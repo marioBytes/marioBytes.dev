@@ -1,0 +1,25 @@
+---
+import Card from './Card.astro';
+
+interface Props {
+  src: string;
+  alt: string;
+}
+
+const { src, alt } = Astro.props;
+---
+
+<Card>
+  <img src={src} alt={alt} />
+  <div>
+    <slot />
+  </div>
+</Card>
+
+<style>
+  img {
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    width: 100%;
+  }
+</style>
