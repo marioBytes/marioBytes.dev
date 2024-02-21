@@ -1,0 +1,65 @@
+---
+const { pathname } = Astro.url;
+
+const navLinks = [
+  { toPath: '/', title: 'About' },
+  { toPath: '/projects', title: 'Projects' },
+  { toPath: '/resume', title: 'Resume' },
+];
+---
+
+<nav>
+  <ul>
+    {
+      navLinks.map(({title, toPath}) =>
+        pathname === toPath ? (
+          <li>
+            <span class="active">{title}</span>
+          </li>
+        ) : (
+          <li>
+            <a href={toPath}>{title}</a>
+          </li>
+        )
+      )
+    }
+  </ul>
+</nav>
+
+<style>
+  nav ul {
+    list-style: none;
+    padding: 0 15px;
+    text-align: right;
+  }
+
+  nav ul li {
+    display: inline;
+    padding: 10px;
+  }
+
+  nav ul:last-child {
+    padding-right: 0;
+  }
+
+  nav a {
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.35s;
+  }
+
+  nav a:hover {
+    color: var(--purple);
+    transition: color 0.35s;
+  }
+
+  .active {
+    color: var(--purple);
+    transition: color 0.35s;
+  }
+
+  .active:hover {
+    color: var(--gray);
+    transition: color 0.35s;
+  }
+</style>
