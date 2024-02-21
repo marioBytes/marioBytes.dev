@@ -1,0 +1,49 @@
+---
+import Button from '../components/Button.astro';
+import CardWithImage from '../components/CardWithImage.astro';
+import Layout from '../layouts/Layout.astro';
+
+import projects from '../assets/data/projects.js';
+---
+
+<Layout title="Portfolio">
+  <main>
+    <ul>
+      {
+        projects.map((project) => (
+          <CardWithImage src={project.imgSource.src} alt="devfinder">
+            <div class="content">
+              <h2>{project.name}</h2>
+              <p>{project.description}</p>
+              {project.links.map(({ source, link }) => (
+                <Button href={link} className="primary">
+                  {source}
+                </Button>
+              ))}
+            </div>
+          </CardWithImage>
+        ))
+      }
+    </ul>
+  </main>
+</Layout>
+
+<style>
+  main ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .content h2 {
+    margin: 6px 0 0;
+    transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .content p {
+    margin-top: 0.75rem;
+    line-height: 1.35;
+  }
+</style>
