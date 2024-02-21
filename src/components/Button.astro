@@ -1,0 +1,35 @@
+---
+interface Props {
+  className: string;
+  href: string;
+}
+
+const { className, href } = Astro.props;
+---
+
+<a href={href} class={className}>
+  <slot />
+</a>
+
+<style>
+  a.primary {
+    color: var(--white);
+    background-color: var(--purple);
+    border: none;
+    border-radius: 7px;
+    display: block;
+    font-family: 'Inconcolata', monospace;
+    font-size: 1.25rem;
+    font-weight: 500;
+    padding: 15px 0;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.4s;
+    width: 100%;
+  }
+
+  a.primary:hover {
+    background-color: var(--black);
+    transition: background-color 0.4s;
+  }
+</style>
