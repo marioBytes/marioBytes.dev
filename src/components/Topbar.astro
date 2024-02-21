@@ -3,30 +3,53 @@ const { pathname } = Astro.url;
 
 const navLinks = [
   { toPath: '/', title: 'About' },
-  { toPath: '/projects', title: 'Projects' },
+  { toPath: '/portfolio', title: 'Portfolio' },
   { toPath: '/resume', title: 'Resume' },
 ];
+
+const isCurrentPath = (path: string) => path === pathname;
 ---
 
 <nav>
-  <ul>
-    {
-      navLinks.map(({title, toPath}) =>
-        pathname === toPath ? (
-          <li>
-            <span class="active">{title}</span>
-          </li>
-        ) : (
-          <li>
-            <a href={toPath}>{title}</a>
-          </li>
+  <div class="topbar-container">
+    <div class="website-name">
+      {isCurrentPath('/') ? <span>marioBytesMedia</span> : <a href="/">marioBytesMedia</a>}
+    </div>
+    <ul>
+      {
+        navLinks.map(({ title, toPath }) =>
+          pathname === toPath ? (
+            <li>
+              <span class="active">{title}</span>
+            </li>
+          ) : (
+            <li>
+              <a href={toPath}>{title}</a>
+            </li>
+          )
         )
-      )
-    }
-  </ul>
+      }
+    </ul>
+  </div>
 </nav>
 
 <style>
+  nav {
+    padding: 0 15px;
+  }
+
+  .topbar-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .website-name {
+    font-family: 'Inconsolata', monospace;
+    font-size: 0.95rem;
+    padding-top: 15px;
+  }
+
   nav ul {
     list-style: none;
     padding: 0 15px;
