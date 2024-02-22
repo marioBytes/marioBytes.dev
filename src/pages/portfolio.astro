@@ -17,7 +17,7 @@ import projects from '../assets/data/projects.js';
               <p>{project.description}</p>
               <div class="project-links">
                 {project.links.map(({ source, link }) => (
-                  <Button href={link} className="primary">
+                  <Button href={link} className="primary" target="_blank">
                     {source}
                   </Button>
                 ))}
@@ -50,6 +50,6 @@ import projects from '../assets/data/projects.js';
   }
 
   .project-links {
-    padding-top: .25rem;
+    padding-top: 0.25rem;
   }
 </style>
