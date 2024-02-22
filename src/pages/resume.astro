@@ -1,11 +1,69 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+
+import { resume } from '../assets/data/resume.js';
+import { formatDate } from '../utils/formatDate.js';
 ---
 
 <Layout title="Resume">
-	<main>
-    <h1>hello world</h1>
-    <span>Lorem ipsum dolor sit.</span>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque, quo.</p>
-	</main>
+  <main>
+    <ul>
+      {
+        resume.map((job) => (
+          <Card>
+            <div class="resume-header">
+              <h2>{job.companyName.toUpperCase()}</h2>
+              <p>{job.jobPosition}</p>
+            </div>
+            <div class="date-info">
+              <p>
+                <span class="bold">Start Date</span>: {formatDate(job.startDate)}
+              </p>
+              <p>
+                <span class="bold">End Date</span>: {formatDate(job.endDate)}
+              </p>
+            </div>
+            <div class="responsibilities">
+              <ul>
+                {job.responsibilities.map(({ description }) => (
+                  <li>
+                    {description}
+                  </li>
+                ))}
+                <li>
+                  <span class="bold">Technologies Used</span>: {job.technologies_used}
+                </li>
+              </ul>
+            </div>
+          </Card>
+        ))
+      }
+    </ul>
+  </main>
 </Layout>
+
+<style>
+  .resume-header h2 {
+    margin-bottom: 0.5rem;
+  }
+  .resume-header p {
+    color: var(--purple);
+    font-family: 'Incosolas', monospace;
+    font-size: 0.9rem;
+    margin-top: 0;
+  }
+
+  .date-info p {
+    margin: 0.5rem 0;
+  }
+
+  .responsibilities {
+    margin: 1rem 0;
+  }
+
+  .responsibilities ul {
+    list-style: disc;
+    margin-left: 1rem;
+  }
+</style>
