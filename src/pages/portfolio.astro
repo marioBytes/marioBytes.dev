@@ -15,11 +15,13 @@ import projects from '../assets/data/projects.js';
             <div class="content">
               <h2>{project.name}</h2>
               <p>{project.description}</p>
-              {project.links.map(({ source, link }) => (
-                <Button href={link} className="primary">
-                  {source}
-                </Button>
-              ))}
+              <div class="project-links">
+                {project.links.map(({ source, link }) => (
+                  <Button href={link} className="primary">
+                    {source}
+                  </Button>
+                ))}
+              </div>
             </div>
           </CardWithImage>
         ))
@@ -45,5 +47,9 @@ import projects from '../assets/data/projects.js';
   .content p {
     margin-top: 0.75rem;
     line-height: 1.35;
+  }
+
+  .project-links {
+    padding-top: .25rem;
   }
 </style>
