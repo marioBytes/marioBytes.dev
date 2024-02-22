@@ -1,11 +1,57 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+
+import me from '../assets/images/me.jpg';
+
+const { src } = me;
 ---
 
 <Layout title="About Me">
-	<main>
-    <h1>hello world</h1>
-    <span>Lorem ipsum dolor sit.</span>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque, quo.</p>
-	</main>
+  <main>
+    <ul>
+      <li>
+        <Card>
+          <div class="avatar">
+            <img src={src} alt="Mario Martinez" loading="lazy" class="avatar__img" />
+          </div>
+          <div class="title">
+            <h2>Mario Martinez</h2>
+            <p>Full-Stack Web Developer</p>
+          </div>
+          <div>
+            <p>
+              My expertise lies in full-stack web development, with a particular focus on the Elixir and JavaScript
+              programming languages. With more than four years of professional experience under my belt, I've
+              contributed to a variety of projects, encompassing sectors such as healthcare and online streaming
+              platforms.
+            </p>
+          </div>
+        </Card>
+      </li>
+    </ul>
+  </main>
 </Layout>
+
+<style>
+  .title h2 {
+    margin-bottom: 0.5rem;
+  }
+
+  .title p {
+    color: var(--purple);
+    font-family: 'Incosolas', monospace;
+    font-size: 0.9rem;
+    margin-top: 0;
+  }
+
+  .avatar {
+    text-align: center;
+  }
+
+  .avatar__img {
+    border-radius: 50%;
+    height: 300px;
+    width: 240px;
+  }
+</style>
