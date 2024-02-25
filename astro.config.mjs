@@ -1,7 +1,7 @@
 import { defineConfig } from 'astro/config';
 
 PORT = 3000;
-BASE_URL = 'https://marioBytes.github.io';
+BASE_URL = 'https://mariobytes.github.io';
 
 // https://astro.build/config
 export default defineConfig({
