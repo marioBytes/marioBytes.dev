@@ -27,12 +27,17 @@ export const resume = [
     startDate: new Date('August 1, 2019'),
     endDate: new Date('July 1, 2022'),
     responsibilities: [
-      { description: 'Designed a microservice to process currency foreign exchange rate estimates' },
       {
-        description: 'Integrated APIs (ie Google Geocoding, IPAP, IPStack) to track a user\'s geo-location.',
+        description:
+          'Created a microservice dedicated to handling the processing of foreign exchange rate estimates for currencies.',
       },
       {
-        description: 'Created websocket implementation to synchronize data between the browser and API',
+        description:
+          "Incorporated APIs such as Google Geocoding, IPAP, and IPStack to pinpoint a user's geographical location.",
+      },
+      {
+        description:
+          'Developed a WebSocket implementation for real-time data synchronization between the browser and the API.',
       },
     ],
     technologies_used:
@@ -42,7 +47,7 @@ export const resume = [
     id: 3,
     companyName: 'Combatting Poverty in New Mexico',
     companyUrl: null,
-    jobPosition: 'Website Maintainer & Website Developer',
+    jobPosition: 'Web Developer',
     startDate: new Date('January 1, 2020'),
     endDate: new Date('August 1, 2021'),
     responsibilities: [
@@ -60,12 +65,16 @@ export const resume = [
     startDate: new Date('August 1, 2019'),
     endDate: new Date('December 1, 2020'),
     responsibilities: [
-      { description: 'Developed UI for admin users to view and update user information' },
       {
-        description: 'Developed functionality for administrators supported across all major browsers and devices',
+        description:
+          'Designed and developed a user interface for administrative users to access and modify user information.',
       },
       {
-        description: 'Learned about application state and how to manage it using libraries like MobX',
+        description:
+          'Implemented administrative functionalities that are compatible with all major browsers and devices.',
+      },
+      {
+        description: 'Acquired knowledge on managing application state through the use of libraries such as MobX.',
       },
     ],
     technologies_used: 'React, JSX, CSS, JavaScript, Linux, Docker, JSON, Git, and Github',
