@@ -2,9 +2,9 @@
 const { pathname } = Astro.url;
 
 const navLinks = [
-  { toPath: '/', title: 'About' },
-  { toPath: '/portfolio', title: 'Portfolio' },
-  { toPath: '/resume', title: 'Resume' },
+  { toPath: 'my-repo/', title: 'About' },
+  { toPath: 'my-repo/portfolio', title: 'Portfolio' },
+  { toPath: 'my-repo/resume', title: 'Resume' },
 ];
 
 const isCurrentPath = (path: string) => path === pathname;
