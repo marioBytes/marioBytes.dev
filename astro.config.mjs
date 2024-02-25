@@ -7,4 +7,5 @@ BASE_URL = 'mariobytes.github.io';
 export default defineConfig({
   server: { port: PORT },
   site: BASE_URL,
+  base: 'marioBytes.dev/',
 });
