@@ -21,10 +21,12 @@ const websiteName = 'marioBytes Web Development';
         navLinks.map(({ title, toPath }) =>
           isCurrentPath(toPath) ? (
             <li>
+              {pathname} | {toPath}
               <span class="active">{title}</span>
             </li>
           ) : (
             <li>
+              {pathname} | {toPath}
               <a href={toPath}>{title}</a>
             </li>
           )
