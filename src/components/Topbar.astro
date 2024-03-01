@@ -3,8 +3,8 @@ const { pathname } = Astro.url;
 
 const navLinks = [
   { toPath: '/', title: 'About' },
-  { toPath: '/portfolio', title: 'Portfolio' },
-  { toPath: '/resume', title: 'Resume' },
+  { toPath: '/portfolio/', title: 'Portfolio' },
+  { toPath: '/resume/', title: 'Resume' },
 ];
 
 const isCurrentPath = (path: string) => path === pathname;
@@ -21,12 +21,10 @@ const websiteName = 'marioBytes Web Development';
         navLinks.map(({ title, toPath }) =>
           isCurrentPath(toPath) ? (
             <li>
-              {pathname} | {toPath}
               <span class="active">{title}</span>
             </li>
           ) : (
             <li>
-              {pathname} | {toPath}
               <a href={toPath}>{title}</a>
             </li>
           )
