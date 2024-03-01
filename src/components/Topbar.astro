@@ -19,7 +19,7 @@ const websiteName = 'marioBytes Web Development';
     <ul>
       {
         navLinks.map(({ title, toPath }) =>
-          pathname === toPath ? (
+          isCurrentPath(toPath) ? (
             <li>
               <span class="active">{title}</span>
             </li>
